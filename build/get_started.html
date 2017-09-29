@@ -1,0 +1,162 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Get Started &#8212; FindFace Enterprise Server SDK 2.5 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="System Requirements" href="system_requirements.html" />
+    <link rel="prev" title="Welcome to FindFace Enterprise Server SDK’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="get-started">
+<h1>Get Started<a class="headerlink" href="#get-started" title="Permalink to this headline">¶</a></h1>
+<p>A typical FindFace Enterprise Server SDK-based biometric system is shown
+on the diagram below:</p>
+<p>FindFace Enterprise Server SDK consists of the Biometric Data Analysis and Recognition Server (hereinafter referred to as FindFace Server or
+Server) and, optionally, the video face detector. Besides the latter, you can also install the other additional components. The FindFace Server
+functioning is provided by interaction of the following components:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Service</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>findface-facenapi</td>
+<td>Python daemon which runs HTTP API. This daemon executes face detection functions, interfaces with MongoDB and findface-nnapi and <a class="reference external" href="mailto:tarantool&#37;&#52;&#48;FindFace">tarantool<span>&#64;</span>FindFace</a> daemons.</td>
+</tr>
+<tr class="row-odd"><td>tntapi (<a class="reference external" href="mailto:tarantool&#37;&#52;&#48;FindFace">tarantool<span>&#64;</span>FindFace</a> as a shard)</td>
+<td>Daemon which enables interaction with the face descriptors index.</td>
+</tr>
+<tr class="row-even"><td>findface-nnapi</td>
+<td>Daemon extracts a feature vector (based on neural network). Requires the package with models &lt;findface-data&gt;.deb.</td>
+</tr>
+<tr class="row-odd"><td>MongoDB</td>
+<td>Database which stores faces metadata, galleries details, settings, etc.</td>
+</tr>
+<tr class="row-even"><td>findface-upload</td>
+<td>Nginx web server used to receive images using WebDAV.</td>
+</tr>
+<tr class="row-odd"><td>NTLS</td>
+<td>Local license server which interfaces with the Global NTechLab License Server (for the network licensing) or a USB dongle (for the on-premise licensing) and passes a license to licensable components.</td>
+</tr>
+</tbody>
+</table>
+<p>Follow the diagram below to deploy FindFace Enterprise Service SDK and
+get ready for delivering face recognition services to your customers.</p>
+<p><strong>The 9 steps to face recognition:</strong></p>
+<ol class="arabic simple">
+<li>Choose deployment architecture</li>
+<li>Prepare hardware</li>
+<li>Install prerequisites</li>
+<li>Install FindFace Enterprise Server SDK</li>
+<li>Create a token and&nbsp;test the system work</li>
+<li>Configure video face detection</li>
+<li>Increase performance by setting up <a href="#id1"><span class="problematic" id="id2">`</span></a>nginx load
+balancing and fast index</li>
+<li>Add advanced features</li>
+<li>Finalize the system with coding</li>
+</ol>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">FindFace Enterprise Server SDK</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system_requirements.html">System Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deploy FindFace Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video_face_detection.html">Video Face Detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_features.html">Advanced Features</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to FindFace Enterprise Server SDK’s documentation!</a></li>
+      <li>Next: <a href="system_requirements.html" title="next chapter">System Requirements</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, NtechLab.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/get_started.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
